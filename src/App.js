@@ -1,25 +1,39 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header';
+import InputField from './components/InputField';
+import React, { Component } from 'react';
+import TaskList from './components/TaskList'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const url = 'http://localhost:8000/todos'
+class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      tasks: []
+    }
+  }
+  addTodo = (title)=> {
+    const newTodo = {
+      title: title
+    }
+    this.setState({
+      tasks: [...this.state.tasks, newTodo]
+    });
+  }
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <InputField
+          addTodoMethod={this.addTodo}
+        />
+        <TaskList
+          tasks={this.state.tasks}
+        />
+      </div>
+    );
+  }
 }
 
 export default App;
