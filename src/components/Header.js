@@ -3,8 +3,8 @@ import React, { Component } from 'react'
 class Header extends Component {
     render() {
         return(
-            <div>
-                <h1 className='header'>To Do List</h1>
+            <div className='header-field'>
+                <h1 className='header'>Task Manager</h1>
             </div>
         );
     }

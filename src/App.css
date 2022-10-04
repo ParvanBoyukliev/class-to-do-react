@@ -1,16 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+
+.input-area {
+  line-height: 12vh;
+  height: 12vh;
+  margin: 0;
+  padding: 0;
+  background-color: #ffd700;
+  border: none;
+}
+
+.header{
+  color: beige;
+  line-height: 12vh;
+  height: 12vh;
+  margin: 0;
+  padding: 0;
+  background-color: #0057b7;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+ol {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+ol li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  font-size: 1em;
+  transition: 0.5s;
+  
+}
+
+li.complete::before {
+  content: '';
+  position: absolute;
+  border-color: #fff;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+.close-btn {
+  background-color: transparent;
+  color: whitesmoke;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 40px;
+  padding: 15px 0px;
+  border: none;
+}
+
+.check-btn {
+  background-color: transparent;
+  color: whitesmoke;
+  position: absolute;
+  right: 40px;
+  top: 0;
+  padding: 15px;
+  border: none;
+}
+
+.complete {
+  text-decoration: line-through;
+}
+
+li:nth-child(odd) {
+  width: 100%;
+  color: whitesmoke;
+  background-color: #989da9;
+}
+
+li:nth-child(even) {
+  width: 100%;
+  color: whitesmoke;
+  background-color:#c3c9d0;
+}
+
+li:hover {
+  font-size: larger;
+}
+
+li:hover:nth-child(odd) {
+  background-color: #555a65;
+}
+
+li:hover:nth-child(even) {
+  background-color:#555a65;
+}
+
+fieldset {
+  margin: 0px;
+  background-color: red;
 }
 
 .App-header {
@@ -28,11 +120,3 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

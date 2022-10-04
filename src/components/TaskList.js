@@ -11,8 +11,14 @@ class TaskList extends Component{
             <div className="container">
                 <h4>Task List</h4>
                 <ol>
-                    {this.props.tasks.map((task,id)=>(
-                        <li key={id}>{task.title}</li>
+                    {this.props.tasks.map(task=>(
+                        <li
+                            className={task.flagComplete ? 'complete' : 'current'}
+                            key={task.id}
+                        >{task.title}&nbsp;
+                            <button className="check-btn" onClick={() => this.props.checkMethod(task)}>V</button>
+                            <button className="close-btn" onClick={() => this.props.deleteMethod(task)}>X</button>
+                        </li>
                     ))}
                 </ol>
             </div>
